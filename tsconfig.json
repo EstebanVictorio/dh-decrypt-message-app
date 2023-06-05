@@ -18,7 +18,21 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "src",
+    "paths": {
+      "components/*": ["components/*"],
+      "blocks/*": ["blocks/*"],
+      "layouts/*": ["layouts/*"],
+      "pages/*": ["pages/*"],
+      "schemas/*": ["schemas/*"],
+      "mutations/*": ["mutations/*"],
+      "utils/*": ["utils/*"]
+    },
+    "typeRoots": [
+      "node_modules/@types/*",
+      "src/types/*"
+    ]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
