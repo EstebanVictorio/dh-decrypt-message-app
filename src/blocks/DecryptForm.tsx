@@ -4,8 +4,10 @@ import { Unlock, Lock } from "react-feather"
 import { Fragment } from "react"
 import { encoded } from "schemas"
 import clsx from "clsx"
+import { useActionData } from "react-router-dom"
 
 const DecryptForm = () => {
+  const actionData = useActionData() as Person | undefined
 
   return (
     <Form schema={encoded} method="POST" action="/" className="flex flex-col gap-y-3 rounded-md p-8 shadow-2xl items-center justify-center bg-blue-500 w-80 sm:w-96">
@@ -52,6 +54,30 @@ const DecryptForm = () => {
                 )
               }}
             </Field>
+            
+              {
+                actionData
+                ? (
+                  <section className="text-white">
+                    <h1>Decoded message:</h1>
+                    <Fragment>
+                      <p className="text-sm text-yellow-200">
+                        ID:
+                        <span className="text-white font-bold ml-1">{actionData.id}</span>
+                      </p>
+                      <p className="text-sm text-yellow-200">
+                        First name:
+                        <span className="text-white font-bold ml-1">{actionData.first_name}</span>
+                      </p>
+                      <p className="text-sm text-yellow-200">
+                        Last name:
+                        <span className="text-white font-bold ml-1">{actionData.last_name}</span>
+                      </p>
+                    </Fragment>
+                  </section>
+                )
+                : null
+              }
           </Fragment>
         )
       }}
