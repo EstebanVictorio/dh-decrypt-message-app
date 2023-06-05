@@ -5,7 +5,6 @@ import BaseButton from "components/forms/BaseButton"
 import { Fragment, useEffect, useState } from "react"
 import { Menu } from "react-feather"
 import { useActionData } from "react-router-dom"
-import clsx from "clsx"
 
 const now = new Date()
 const initialLocalStorage = typeof document !== 'undefined' ? localStorage.getItem("log") : "[]"
