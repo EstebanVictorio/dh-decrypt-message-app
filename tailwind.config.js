@@ -13,6 +13,9 @@ export default {
   },
   theme: {
     extend: {
+      transitionProperty: {
+        right: "right",
+      },
       colors: {
         white: "#F5F5F5",
         black: "#1A1A1A",
